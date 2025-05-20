@@ -1,0 +1,970 @@
+@font-face {
+    font-family: 'LyonArabic-TextRegular';
+    src: url('../fonts/29LT Azahar Text AL.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Archive-Display';
+    src: url('../fonts/Archive-Display.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+
+body {
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    color: #000;
+    background-color: #fff;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content-column-1,
+.content-column-2 {
+    padding: 30px;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.content-column-1::-webkit-scrollbar,
+.content-column-2::-webkit-scrollbar {
+    display: none;
+}
+
+.content-column-1 {
+    width: 50vw;
+    padding-right: 70px;
+    color: #000;
+}
+
+.content-column-2 {
+    width: 50vw;
+    padding-left: 50px;
+    direction: rtl;
+    text-align: right;
+    background-color: #000;
+    color: #fff;
+    animation: none !important;
+    transform: none !important;
+    text-orientation: mixed !important;
+    writing-mode: horizontal-tb !important;
+}
+
+/* Headings and Paragraphs */
+.content-column-1 h1,
+.content-column-2 h1 {
+    font-size: 36px;
+    margin: 20px 0 30px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.content-column-1 h2,
+.content-column-2 h2 {
+    font-size: 46px;
+    margin: 20px 0 30px;
+    text-align: center;
+    line-height: 1.2;
+    animation: none;
+    transform: none;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+}
+
+.content-column-1 h2,
+.content-column-2 h2 {
+    font-size: 33px;
+    margin-bottom: 100px;
+}
+
+.content-column-1 p,
+.content-column-2 p {
+    margin-top: 20px;
+    font-style: normal;
+}
+
+.content-column-1 p {
+    color: #000;
+    direction: ltr;
+    padding-left: 30px;
+}
+
+.content-column-2 p {
+    color: #fff;
+    direction: rtl;
+    text-align: right;
+    padding-right: 30px;
+}
+
+/* Specific Paragraphs */
+.content-column-1 p:first-child,
+.content-column-1 p:nth-child(2),
+.content-column-1 p:nth-child(3) {
+    text-align: center;
+    font-size: 33px;
+    margin-bottom: 30px;
+}
+
+.content-column-1 p:nth-child(2),
+.content-column-1 p:nth-child(3) {
+    direction: rtl;
+}
+
+/* Custom Tag: indent */
+indent {
+    display: block;
+    margin-top: 20px;
+    font-style: normal;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    color: #000;
+    direction: ltr;
+    margin-left: 140px;
+}
+
+.content-column-2 indent {
+    color: #fff;
+    direction: rtl;
+    text-align: right;
+    margin: 15px 0 0 0;
+    margin-right: 110px;
+    padding: 30px 0;
+}
+
+/* Additional Columns */
+.content-column-3,
+.content-column-4 {
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    padding: 0 20px;
+    font-family: 'LyonArabic-TextRegular';
+}
+
+.content-column-3 p,
+.content-column-4 p {
+    font-style: italic;
+    margin-top: 0;
+}
+
+.content-column-3 indent,
+.content-column-4 indent {
+    margin-left: 90px;
+    margin-top: 15px;
+    color: #fff;
+}
+
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    text-align: center;
+}
+
+.landing-title {
+    font-size: 180px;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    text-decoration: none;
+    color: #ff0000;
+    text-align: center;
+    line-height: 1.09;
+    transition: color 0.7s ease, letter-spacing 2s ease;
+    margin-top: -200px;
+    opacity: 0;
+    animation: initialFadeIn 2s ease-out forwards, subtleFloat 4s ease-in-out infinite 4s;
+}
+
+.landing-title:hover {
+    color: #cc0000;
+    letter-spacing: 5px;
+    transition: color 0.7s ease, letter-spacing 2s ease;
+}
+
+/* Landing Page Circle */
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+}
+
+.circle-link {
+    text-decoration: none;
+    display: block;
+}
+
+.black-circle {
+    width: 150px;
+    height: 150px;
+    background-color: #f00;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.black-circle:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Dots */
+.nav-dots {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2000;
+}
+
+.nav-dot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #f00;
+    border-radius: 80%;
+    pointer-events: auto;
+    transition: transform 0.3s ease;
+    z-index: 2001;
+}
+
+.nav-dot::after {
+    content: attr(data-title);
+    position: absolute;
+    font-family: 'LyonArabic-TextRegular', serif;
+    font-size: 14px;
+    color: #ff0000;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    transform-origin: center;
+}
+
+.nav-dot.top-left::after {
+    top: 100%;
+    left: 50%;
+    transform: translateY(20px) translateX(-50%) rotate(-90deg);
+}
+
+.nav-dot.top-right::after {
+    top: 100%;
+    right: 50%;
+    transform: translateY(20px) translateX(50%) rotate(-90deg);
+}
+
+.nav-dot.bottom-left::after {
+    bottom: 140%;
+    left: 50%;
+    transform: translateY(-20px) translateX(-50%) rotate(-90deg);
+}
+
+.nav-dot.bottom-right::after {
+    bottom: 100%;
+    right: 50%;
+    transform: translateY(-25px) translateX(50%) rotate(-90deg);
+}
+
+.nav-dot:hover::after {
+    opacity: 1;
+}
+
+.nav-dot:hover {
+    transform: scale(1.2);
+}
+
+.nav-dot.top-left {
+    top: 20px;
+    left: 20px;
+}
+
+.nav-dot.top-right {
+    top: 20px;
+    right: 20px;
+}
+
+.nav-dot.bottom-left {
+    bottom: 20px;
+    left: 20px;
+}
+
+.nav-dot.bottom-right {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Selection Styling */
+::selection {
+    background: #f00;
+    color: #000000;
+}
+
+::-moz-selection {
+    background: #f00;
+    color: #fff;
+}
+
+/* Typography Animations */
+@keyframes randomFontChange {
+    0%, 100% {
+        font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    }
+}
+
+@keyframes textColorChange {
+    0%, 100% { color: #fff; }
+    50% { color: #f00; }
+}
+
+@keyframes letterSpacingWave {
+    0% {
+        letter-spacing: normal;
+    }
+    50% {
+        letter-spacing: 5px;
+    }
+    100% {
+        letter-spacing: normal;
+    }
+}
+
+@keyframes randomFloat2 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-2px); }
+    50% { transform: translateY(2px) rotate(1deg); }
+    75% { transform: translateY(-2px) rotate(-2deg); }
+}
+
+/* Apply Hover & Font Animations */
+.content-column-1 h1,
+.content-column-1 h2,
+.content-column-1 p,
+.content-column-2 h1,
+.content-column-2 h2,
+.content-column-2 p,
+.content-column-2 indent {
+    animation: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+}
+
+.content-column-2 h1,
+.content-column-2 h2,
+.content-column-2 p {
+    animation: randomFloat2 8s ease-in-out infinite;
+}
+
+.content-column-1 h1:hover,
+.content-column-1 h2:hover,
+.content-column-1 p:hover,
+.content-column-2 h1:hover,
+.content-column-2 h2:hover,
+.content-column-2 p:hover,
+.content-column-2 indent:hover {
+    animation: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+/* New index-title and index-subtitle styles */
+.index-title {
+    font-family: 'Archive-Display', Arial, sans-serif;
+    font-size: 60px;
+    color: #f00;
+    text-align: center;
+    animation: subtleFloat 4s ease-in-out infinite;
+}
+
+.index-subtitle {
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+    margin-top: 20px;
+}
+
+/* subtleFloat animation */
+@keyframes subtleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+#index-toggle {
+    display: none;
+}
+
+.index-container {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1.5s ease;
+    background-color: #000;
+}
+
+.landing-container {
+    opacity: 1;
+    transition: opacity 1.5s ease;
+    z-index: 10;
+}
+
+/* On toggle: fade out landing, fade in index */
+#index-toggle:checked ~ .landing-container {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#index-toggle:checked ~ .index-container {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 5;
+}
+
+/* Default red circle cursor */
+body, button, input, textarea, select, label, .circle-link, .black-circle {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"><circle cx="15" cy="15" r="15" fill="red"/></svg>') 15 15, auto;
+  }
+  
+  /* Hovering on hyperlinks: black circle with red stroke */
+  a:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"><circle cx="15" cy="15" r="13" fill="black" stroke="red" stroke-width="2"/></svg>') 15 15, pointer;
+  }
+  
+  .intro-content {
+    max-width: 960px;
+    margin: 80px auto;
+    padding: 0 40px;
+    direction: ltr;
+    text-align: left;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+.intro-content p {
+    margin-bottom: 20px;
+}
+
+/* Add this new class for index page specific styling */
+.index-content {
+    background-color: #000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-wrapper {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.quad-layout {
+    display: grid;
+    grid-template-columns: 0.4fr 4.1fr 4.1fr 0.4fr;
+    gap: 5px;
+    padding: 0 0 80px 0;
+    margin-top: -80px;
+    align-items: start;
+    width: 100%;
+}
+
+.left-diagonal {
+    margin-right: -20px;  /* Move it closer to the left text column's border */
+}
+
+.right-diagonal {
+    margin-left: -20px;  /* Move it closer to the right text column's border */
+}
+
+.diagonal-column {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: visible;
+}
+
+.diagonal-text {
+    font-family: 'LyonArabic-TextRegular', serif;
+    font-size: 18px;
+    line-height: 30px;
+    transform: rotate(45deg);
+    transform-origin: left center;
+    white-space: nowrap;
+    color: #ff0000;
+    width: max-content;
+    opacity: 0;
+    animation: slideInDiagonal 1s ease forwards;
+    animation-timeline: scroll();
+    animation-range: entry 10% cover 80%;
+}
+
+.right-diagonal .diagonal-text {
+    transform: rotate(-45deg);
+    transform-origin: right center;
+    text-align: right;
+    align-self: flex-end;
+    width: max-content;
+    opacity: 0;
+    animation: slideInDiagonalRight 1s ease forwards;
+    animation-timeline: scroll();
+    animation-range: entry 10% cover 80%;
+}
+
+.text-column {
+    font-family: 'LyonArabic-TextRegular', serif;
+    font-size: 20px;
+    line-height: 1.48;
+    color: #ffffff;
+    padding: 20px;
+    margin: 5px;
+    height: auto;
+    overflow: visible;
+}
+
+.text-column p {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    animation: fadeInText 1s ease forwards;
+    animation-timeline: scroll();
+    animation-range: entry 10% cover 70%;
+}
+
+.text-column:nth-child(3) { /* This targets the second text column */
+    direction: rtl;
+    text-align: right;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add sequential delays for paragraphs */
+.text-column p:nth-child(1) { animation-delay: 0.2s; }
+.text-column p:nth-child(2) { animation-delay: 0.4s; }
+.text-column p:nth-child(3) { animation-delay: 0.6s; }
+.text-column p:nth-child(4) { animation-delay: 0.8s; }
+.text-column p:nth-child(5) { animation-delay: 1.0s; }
+.text-column p:nth-child(6) { animation-delay: 1.2s; }
+.text-column p:nth-child(7) { animation-delay: 1.4s; }
+.text-column p:nth-child(8) { animation-delay: 1.6s; }
+
+.quad-layout {
+    grid-template-columns: 0.6fr 3.4fr 3.4fr 0.6fr;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3.4fr) minmax(0, 3.4fr) minmax(0, 2fr);
+    gap: 22px;
+}
+.text-column,
+.diagonal-column {
+    padding: 0;
+}
+
+.bottom-diagonal-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: -50px;
+    padding: 20px 0;
+}
+
+.bottom-diagonal-column {
+    display: -webkit-box;
+    flex-direction: row;
+    gap: 16px;
+    overflow: visible;
+    width: auto;
+    justify-content: center;
+    margin-top: 100px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.bottom-diagonal-text {
+    font-family: 'LyonArabic-TextRegular', serif;
+    font-size: 16px;
+    transform: rotate(-45deg);
+    white-space: nowrap;
+    color: #ff0000;
+    width: 20px;
+    margin-top: -90px;
+    padding: 0 0px;
+
+}
+
+/* Random durations and delays for each line */
+.bottom-diagonal-text:nth-child(1) { animation-duration: 12s; animation-delay: 0s; }
+.bottom-diagonal-text:nth-child(2) { animation-duration: 18s; animation-delay: 1.5s; }
+.bottom-diagonal-text:nth-child(3) { animation-duration: 14s; animation-delay: 0.7s; }
+.bottom-diagonal-text:nth-child(4) { animation-duration: 16s; animation-delay: 2.3s; }
+.bottom-diagonal-text:nth-child(5) { animation-duration: 15s; animation-delay: 0.2s; }
+.bottom-diagonal-text:nth-child(6) { animation-duration: 19s; animation-delay: 1.8s; }
+.bottom-diagonal-text:nth-child(7) { animation-duration: 14.5s; animation-delay: 0.5s; }
+.bottom-diagonal-text:nth-child(8) { animation-duration: 17.5s; animation-delay: 2.1s; }
+.bottom-diagonal-text:nth-child(9) { animation-duration: 15.5s; animation-delay: 0.9s; }
+.bottom-diagonal-text:nth-child(10) { animation-duration: 18.5s; animation-delay: 1.2s; }
+
+.top-diagonal-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    padding: 30px 0;
+}
+
+.top-diagonal-column {
+    display: -webkit-box;
+    flex-direction: row;
+    gap: 16px;
+    overflow: visible;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.top-diagonal-text {
+    font-family: 'LyonArabic-TextRegular', serif;
+    font-size: 16px;
+    transform: rotate(-45deg);
+    white-space: nowrap;
+    color: #ff0000;
+    width: 20px;
+    margin-top: -90px;
+    padding: 0 0px;
+    animation: letterSpacingWave 15s ease-in-out infinite;
+}
+
+/* Random durations and delays for each line */
+.top-diagonal-text:nth-child(1) { animation-duration: 12s; animation-delay: 0s; }
+.top-diagonal-text:nth-child(2) { animation-duration: 18s; animation-delay: 1.5s; }
+.top-diagonal-text:nth-child(3) { animation-duration: 14s; animation-delay: 0.7s; }
+.top-diagonal-text:nth-child(4) { animation-duration: 16s; animation-delay: 2.3s; }
+.top-diagonal-text:nth-child(5) { animation-duration: 15s; animation-delay: 0.2s; }
+.top-diagonal-text:nth-child(6) { animation-duration: 19s; animation-delay: 1.8s; }
+.top-diagonal-text:nth-child(7) { animation-duration: 14.5s; animation-delay: 0.5s; }
+.top-diagonal-text:nth-child(8) { animation-duration: 17.5s; animation-delay: 2.1s; }
+.top-diagonal-text:nth-child(9) { animation-duration: 15.5s; animation-delay: 0.9s; }
+.top-diagonal-text:nth-child(10) { animation-duration: 18.5s; animation-delay: 1.2s; }
+
+@keyframes letterSpacingWave {
+    0% {
+        letter-spacing: normal;
+    }
+    50% {
+        letter-spacing: 5px;
+    }
+    100% {
+        letter-spacing: normal;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes slideInDiagonal {
+    from {
+        opacity: 100;
+        transform: translateX(-100px) rotate(45deg);
+    }
+    to {
+        opacity: 100;
+        transform: translateX(0) rotate(45deg);
+    }
+}
+
+@keyframes slideInDiagonalRight {
+    from {
+        opacity: 100;
+        transform: translateX(100px) rotate(-45deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(-45deg);
+    }
+}
+
+/* Add sequential delays for each line */
+.diagonal-text:nth-child(1) { animation-delay: 0.2s; }
+.diagonal-text:nth-child(2) { animation-delay: 0.4s; }
+.diagonal-text:nth-child(3) { animation-delay: 0.6s; }
+.diagonal-text:nth-child(4) { animation-delay: 0.8s; }
+.diagonal-text:nth-child(5) { animation-delay: 1.0s; }
+.diagonal-text:nth-child(6) { animation-delay: 1.2s; }
+.diagonal-text:nth-child(7) { animation-delay: 1.4s; }
+.diagonal-text:nth-child(8) { animation-delay: 1.6s; }
+.diagonal-text:nth-child(9) { animation-delay: 1.8s; }
+.diagonal-text:nth-child(10) { animation-delay: 2.0s; }
+.diagonal-text:nth-child(11) { animation-delay: 2.2s; }
+.diagonal-text:nth-child(12) { animation-delay: 2.4s; }
+.diagonal-text:nth-child(13) { animation-delay: 2.6s; }
+.diagonal-text:nth-child(14) { animation-delay: 2.8s; }
+.diagonal-text:nth-child(15) { animation-delay: 3.0s; }
+.diagonal-text:nth-child(16) { animation-delay: 3.2s; }
+.diagonal-text:nth-child(17) { animation-delay: 3.4s; }
+.diagonal-text:nth-child(18) { animation-delay: 3.6s; }
+.diagonal-text:nth-child(19) { animation-delay: 3.8s; }
+.diagonal-text:nth-child(20) { animation-delay: 4.0s; }
+.diagonal-text:nth-child(21) { animation-delay: 4.2s; }
+.diagonal-text:nth-child(22) { animation-delay: 4.4s; }
+.diagonal-text:nth-child(23) { animation-delay: 4.6s; }
+.diagonal-text:nth-child(24) { animation-delay: 4.8s; }
+.diagonal-text:nth-child(25) { animation-delay: 5.0s; }
+.diagonal-text:nth-child(26) { animation-delay: 5.2s; }
+.diagonal-text:nth-child(27) { animation-delay: 5.4s; }
+.diagonal-text:nth-child(28) { animation-delay: 5.6s; }
+.diagonal-text:nth-child(29) { animation-delay: 5.8s; }
+.diagonal-text:nth-child(30) { animation-delay: 6.0s; }
+.diagonal-text:nth-child(31) { animation-delay: 6.2s; }
+.diagonal-text:nth-child(32) { animation-delay: 6.4s; }
+.diagonal-text:nth-child(33) { animation-delay: 6.6s; }
+.diagonal-text:nth-child(34) { animation-delay: 6.8s; }
+.diagonal-text:nth-child(35) { animation-delay: 7.0s; }
+.diagonal-text:nth-child(36) { animation-delay: 7.2s; }
+.diagonal-text:nth-child(37) { animation-delay: 7.4s; }
+.diagonal-text:nth-child(38) { animation-delay: 7.6s; }
+.diagonal-text:nth-child(39) { animation-delay: 7.8s; }
+.diagonal-text:nth-child(40) { animation-delay: 8.0s; }
+
+@keyframes fadeInGlow {
+    0% {
+        opacity: 0;
+        text-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+@keyframes initialFadeIn {
+    0% {
+        opacity: 0;
+        text-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 0 rgba(255, 0, 0, 0);
+    }
+}
+
+.moving-text-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 20px;
+}
+
+.moving-text {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: moveText 80s linear infinite;
+    gap: 0;
+    margin: 0 -5px;
+    will-change: transform;
+}
+
+.moving-text span {
+    font-family: 'LyonArabic-TextRegular', serif;
+    font-size: 16px;
+    color: #ff0000;
+    padding: 0 4px;
+    letter-spacing: 0.2px;
+    margin: 0 -2px;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Simple Page Fade Transition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply fade to main content areas */
+.content,
+.content-column-1,
+.content-column-2,
+.unseen-container,
+.landing-container,
+.index-container {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Remove all animations from Farsi content */
+.content-column-2 {
+    animation: none !important;
+    transform: none !important;
+    text-orientation: mixed !important;
+    writing-mode: horizontal-tb !important;
+}
+
+.content-column-2 h1,
+.content-column-2 h2,
+.content-column-2 p,
+.content-column-2 indent {
+    animation: none !important;
+    transform: none !important;
+    text-orientation: mixed !important;
+    writing-mode: horizontal-tb !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+    direction: rtl;
+}
+
+.content-column-2 h1:hover,
+.content-column-2 h2:hover,
+.content-column-2 p:hover,
+.content-column-2 indent:hover {
+    animation: none !important;
+    transform: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+/* Override any existing animations */
+@keyframes resetFarsiContent {
+    from, to {
+        transform: none;
+        rotate: 0deg;
+    }
+}
+
+.content-column-2 * {
+    animation: resetFarsiContent 0s !important;
+    transform: none !important;
+    text-orientation: mixed !important;
+    writing-mode: horizontal-tb !important;
+}
+
+/* Fix distorted Farsi headers in interview page */
+.interview-container .content-column-2 h1,
+.interview-container .content-column-2 h2 {
+    font-size: 46px;
+    margin: 20px 0 30px;
+    text-align: center;
+    line-height: 1.2;
+    animation: none !important;
+    transform: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+    direction: rtl;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+}
+
+.interview-container .content-column-2 h2 {
+    font-size: 33px;
+    margin-bottom: 100px;
+}
+
+.interview-container .content-column-2 h1:hover,
+.interview-container .content-column-2 h2:hover {
+    animation: none !important;
+    transform: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+/* Remove font changing hover effect from English text */
+.interview-container .content-column-1 h1:hover,
+.interview-container .content-column-1 h2:hover,
+.interview-container .content-column-1 p:hover {
+    animation: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+.interview-container .content-column-1 h1,
+.interview-container .content-column-1 h2,
+.interview-container .content-column-1 p {
+    animation: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+}
+
+/* Remove all font switching effects from English text */
+.content-column-1 h1,
+.content-column-1 h2,
+.content-column-1 p,
+.content-column-1 indent {
+    animation: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+}
+
+.content-column-1 h1:hover,
+.content-column-1 h2:hover,
+.content-column-1 p:hover,
+.content-column-1 indent:hover {
+    animation: none !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+    letter-spacing: normal !important;
+}
+
+/* Override any existing font animations */
+@keyframes resetEnglishText {
+    from, to {
+        font-family: 'LyonArabic-TextRegular', Arial, sans-serif;
+    }
+}
+
+.content-column-1 * {
+    animation: resetEnglishText 0s !important;
+    font-family: 'LyonArabic-TextRegular', Arial, sans-serif !important;
+}
+  
+  
