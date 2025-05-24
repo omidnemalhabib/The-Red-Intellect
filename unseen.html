@@ -16,14 +16,87 @@
         <a class="nav-dot bottom-right" href="unseen.html" data-title="Unseen"></a>    <!-- unseen -->
     </div>
 
+    <!-- Line Height Slider -->
+    <div class="line-height-control">
+        <input type="range" id="lineHeightSlider" min="0.6" max="2" step="0.1" value="0.6">
+        <input type="range" id="fontSizeSlider" min="28" max="120" step="1" value="60">
+        <input type="range" id="letterSpacingSlider" min="-2" max="20" step="0.5" value="0">
+    </div>
+
     <div class="unseen-container">
         <div class="content-column-1">
-            <h2>If the birds understand each other's language?</h2>
-            <h1>Rooted in ancient Persian mysticism and philosophy, we take this question as a source of inspiration and a liberating framework for creating typographic narratives and visual language. We explore limitation not as a hindrance, but as a poetic structure—a way to invent new forms of expression when the old ones no longer serve freedom. Through extremely simple analog tool-making, experimental typography, and basic digital methods, we ask: How does language carry memory, protest, and spirit? What happens when type breaks free from legibility and becomes ritual, resistance, or a whisper only some can hear? Embracing mistakes and nonlinear design processes, this workshop invites you to invent a personal system of writing/making—born from constraint, guided by intuition, and shaped by the unseen. Between silence and sound, between history and imagination, lies a new typographic tongue.
-                Our objective and subjective perceptions of a "text" are always defined within the common frameworks of language. Therefore, the subject of type/design and typography, which is tied to the topic of language and its cultural and historical backgrounds and context, is generally considered as a tool for reading the information. The function of type is limited to these common frameworks and definitions regarding the construction and arrangement of letters, and as a result, typing is always at the service of the text and the information contained in it.<br>
-                This project is an opportunity and an exercise to challenge the role of type and typography from unusual, experiential and meta-linguistic directions. Inventing and disrupting the structure of reading text, the help of the phenomena and events in it, and with our new experiments, transform them into typographic narratives. Also, apart from the obviousness about the endless potential of Persian typing, I try to look for very simple, personal, meaningful, and profound solutions through another lens for narrating, writing, thinking, and feeling through typing.
-                Examining the relationship between language, translation, and typography, highlighting how meaning evolves and fragments when crossing linguistic and cultural boundaries. Translation is framed as a creative process fılled with inevitable ambiguities, which can open up new possibilities for interpretation. Typography is presented as a medium capable of breaking away from linear, functional reading, instead offering non-linear, multi-layered narratives. This approach emphasizes the visual and conceptual potential of language, suggesting that type can go beyond facilitating reading to become a tool for slowing down perception and fostering deeper reflection.</h1>
+            <div class="editable-section" contenteditable="true" spellcheck="false" style="pointer-events: auto;">
+                <h1>typographic narratives and visual language shaped by the unseen...</h1>
+            </div>
+            <div class="static-section">
+                <h1>we explore limitation not as a hindrance, but as a poetic structure—a way to invent new forms of expression when the old ones no longer serve freedom. through extremely simple analog tool-making, experimental typography, and basic digital methods, we ask: How does language carry memory, protest, and spirit. what happens when type breaks free from legibility and becomes ritual, resistance, or a whisper only some can hear. embracing mistakes and nonlinear design processes, this workshop invites you to invent a personal system of writing/making—born from constraint, guided by intuition, and shaped by the unseen. between silence and sound, between history and imagination, lies a new typographic tongue.
+                    our objective and subjective perceptions of a text are always defined within the common frameworks of language. therefore, the subject of type/design and typography, which is tied to the topic of language and its cultural and historical backgrounds and context, is generally considered as a tool for reading the information. the function of type is limited to these common frameworks and definitions regarding the construction and arrangement of letters, and as a result, typing is always at the service of the text and the information contained in it.<br>
+                    this project is an opportunity and an exercise to challenge the role of type and typography from unusual, experiential and meta-linguistic directions. inventing and disrupting the structure of reading text, the help of the phenomena and events in it, and with our new experiments, transform them into typographic narratives. also, apart from the obviousness about the endless potential of Persian typing, I try to look for very simple, personal, meaningful, and profound solutions through another lens for narrating, writing, thinking, and feeling through typing.
+                    examining the relationship between language, translation, and typography, highlighting how meaning evolves and fragments when crossing linguistic and cultural boundaries. translation is framed as a creative process filled with inevitable ambiguities, which can open up new possibilities for interpretation. typography is presented as a medium capable of breaking away from linear, functional reading, instead offering non-linear, multi-layered narratives. this approach emphasizes the visual and conceptual potential of language, suggesting that type can go beyond facilitating reading to become a tool for slowing down perception and fostering deeper reflection.</h1>
+            </div>
+        </div>
+        <div class="bottom-diagonal-section">
+            <div class="bottom-diagonal-column">
+                <div class="bottom-diagonal-text">experimental typography</div>
+                <div class="bottom-diagonal-text">there is something els</div>
+                <div class="bottom-diagonal-text">subjective perceptions of a text</div>
+                <div class="bottom-diagonal-text">slowing down perception</div>
+                <div class="bottom-diagonal-text">fostering deeper reflection</div>
+                <div class="bottom-diagonal-text">inventing and disrupting the structure</div>
+                <div class="bottom-diagonal-text">There is something els</div>
+                <div class="bottom-diagonal-text">embracing mistakes and nonlinear design</div>
+                <div class="bottom-diagonal-text">creating typographic narratives</div>
+                <div class="bottom-diagonal-text">challenge the role of type and typography</div>
+                <div class="bottom-diagonal-text">visual and conceptual potential</div>
+                <div class="bottom-diagonal-text">shaped by the unseen</div>
+                <div class="bottom-diagonal-text">slowing down perception</div>
+                <div class="bottom-diagonal-text">fostering deeper reflection</div>
+                <div class="bottom-diagonal-text">inventing and disrupting the structure</div>
+                <div class="bottom-diagonal-text">There is something els</div>
+                <div class="bottom-diagonal-text">embracing mistakes and nonlinear design</div>
+                <div class="bottom-diagonal-text">creating typographic narratives</div>
+                <div class="bottom-diagonal-text">shaped by the unseen</div>
+            </div>
+        </div>
+
+        <!-- Single Circular Text Element -->
+        <div class="unseen-circular-text">
+            <svg class="circular-text-2" viewBox="0 0 100 100">
+                <defs>
+                    <path id="circle2" d="M50,50 m-40,0 a40,40 0 1,0 80,0 a40,40 0 1,0 -80,0" />
+                </defs>
+                <text>
+                    <textPath href="#circle2" startOffset="0%">
+ the red intelect, shaped by the unseen
+                    </textPath>
+                </text>
+            </svg>
         </div>
     </div>
 </body>
+<script>
+    const lineHeightSlider = document.getElementById('lineHeightSlider');
+    const fontSizeSlider = document.getElementById('fontSizeSlider');
+    const letterSpacingSlider = document.getElementById('letterSpacingSlider');
+    const unseenContainer = document.querySelector('.unseen-container .content-column-1 h1');
+    const staticSection = document.querySelector('.static-section h1');
+    
+    lineHeightSlider.addEventListener('input', function() {
+        unseenContainer.style.lineHeight = this.value;
+        staticSection.style.lineHeight = this.value;
+    });
+
+    fontSizeSlider.addEventListener('input', function() {
+        unseenContainer.style.fontSize = this.value + 'px';
+        staticSection.style.fontSize = this.value + 'px';
+    });
+
+    letterSpacingSlider.addEventListener('input', function() {
+        unseenContainer.style.letterSpacing = this.value + 'px';
+        staticSection.style.letterSpacing = this.value + 'px';
+    });
+
+    // Set default text alignment for static section
+    staticSection.style.textAlign = 'justify';
+</script>
 </html>

@@ -17,7 +17,20 @@
         <a class="nav-dot top-right" href="about.html" data-title="About"></a>        <!-- about -->
         <a class="nav-dot bottom-left" href="interview.html" data-title="Interview"></a>  <!-- interview -->
         <a class="nav-dot bottom-right" href="unseen.html" data-title="Unseen"></a>    <!-- unseen -->
-        
+    </div>
+
+    <!-- Circular Text SVG -->
+    <div class="interview-circular-text-container">
+        <svg viewBox="0 0 700 700" class="interview-circular-text">
+            <defs>
+                <path id="interview-circle-path" d="M350,350 m-200,0 a200,200 0 1,0 400,0 a200,200 0 1,0 -400,0" />
+            </defs>
+            <text>
+                <textPath href="#interview-circle-path" startOffset="50%" text-anchor="middle">
+                    There is no direction, no limitation, but imagination.
+                </textPath>
+            </text>
+        </svg>
     </div>
 
     <div class="content">
@@ -25,8 +38,8 @@
             <h2>In the Shadow<br>of the Red Intellect</h2>
             <h1>An Exploratory Statement on<br>Experimental Typography, Illegibility, and Mystical Language</h1>
 
-            <h2>An Imaginary Interview<br>with Shihab al-Din Suhrawardi</h2>
-            <h2>A Dialogue on the Unseen, the Unreadable,<br>and the Illuminated Path</h2>
+            <h2>An Imaginary Dialogue<br>with Shihab al-Din Suhrawardi</h2>
+            <h2>On the Unseen, the Unreadable, and<br>the Illuminated Path</h2>
 
 
             
@@ -74,11 +87,11 @@
         </div>
 
         <div class="content-column-2">
-            <h2>در ســـایه‌ی<br>عقـــــــــــــل ســــــــــــــــرخ<h2>
-            <h1>بیانیه‌ای اکتشــــــــــــــــــــــــــافی در باب<br>تایپـــــــــــــوگرافی تجــــــــــــــــــــــــــربی، ناخـــــــــــــوانایی و<br>زبان عرفــــــــــــــــــــــــــانی<h1>
+            <h2>در ســـایه‌ی<br>عقــــــــل ســـــرخ<h2>
+            <h1>بیانیه‌ای اکتشــــــــــــــــــــــــــافی در باب<br>تایپـــــــــــــوگرافی تجــــــــــــــــــــــــــربی، ناخـــــــــــــوانایی <br>زبان عرفــــــــــــــــــــــــــانی<h1>
 
             <h2>گفتگویی خیالی<br>با شهاب‌الدین سهروردی</h2>
-            <h2>گفتگویی درباره‌ی نادیده‌ها، ناخوانده‌هاو<br>راه روشن بی‌نشانه</h2>
+            <h2>درباره‌ی نادیــــــــــــده‌ها، ناخــــــــــــوانده‌ها<br>و راه روشــــن بی‌نشــــانه</h2>
 
             <p>شما کتاب «عقل سرخ» را با گفتگویی بین خودتان و یک دوست شروع می‌کنید. او می‌پرسد: «آیا مرغان زبان یکدیگر دانند؟» چرا با چنین سوالی شروع می‌کنید؟</p>
 
@@ -118,6 +131,16 @@
             <indent>به شکستگی اعتماد کن. به لبه‌ی تاریک حرف اعتماد کن. بگذار جوهر محو شود. بگذار جمله حل شود. وقتی خواننده باید معنا را حس کند، شروع به مشارکت در متن می‌کند. آن زمان است که خواندن تبدیل به آیین می‌شود. تایپوگرافی، در این حالت عمیق‌تر، تبدیل به یک عمل عرفانی می‌شود. شما فقط حروف را طراحی نمی‌کنید. شما حضور را احضار می‌کنید.</indent>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.content-column-1, .content-column-2').forEach(column => {
+            column.addEventListener('scroll', () => {
+                const scrollPercent = column.scrollTop / (column.scrollHeight - column.clientHeight);
+                const circle = document.querySelector('.interview-circular-text');
+                circle.style.transform = `rotate(${scrollPercent * 360}deg)`;
+            });
+        });
+    </script>
 </body>
 
 </html>
