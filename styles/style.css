@@ -155,7 +155,7 @@ indent {
 }
 
 .landing-title {
-    font-size: 180px;
+    font-size: 140px;
     font-family: '29LT Azahar Text', Arial, sans-serif;
     text-decoration: none;
     color: #ff0000;
@@ -463,24 +463,30 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
     width: 100%;
 }
 
-.left-diagonal {
-    margin-right: -20px;  /* Move it closer to the left text column's border */
-}
-
-.right-diagonal {
-    margin-left: -20px;  /* Move it closer to the right text column's border */
-}
-
 .diagonal-column {
     display: flex;
     flex-direction: column;
     gap: 5px;
     overflow: visible;
+    padding: 0 50px;
+    box-sizing: border-box;  /* Added to ensure padding is included in width */
+    width: 100%;  /* Ensure column takes full width of its grid cell */
+}
+
+.left-diagonal {
+    margin-right: -70px;
+    margin-left: 70px;  /* Increased to match the visual effect of the right side */
+    justify-content: flex-start;
+}
+
+.right-diagonal {
+    margin-left: -70px;
+    justify-content: flex-end;
 }
 
 .diagonal-text {
     font-family: '29LT Azahar Text', serif;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 30px;
     transform: rotate(45deg);
     transform-origin: left center;
@@ -507,7 +513,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 
 .text-column {
     font-family: '29LT Azahar Text', serif;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 1.48;
     color: #ffffff;
     padding: 20px;
@@ -584,7 +590,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 
 .bottom-diagonal-text {
     font-family: '29LT Azahar Text', serif;
-    font-size: 16px;
+    font-size: 14px;
     transform: rotate(-45deg);
     white-space: nowrap;
     color: #ff0000;
@@ -650,7 +656,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 
 .top-diagonal-text {
     font-family: '29LT Azahar Text', serif;
-    font-size: 16px;
+    font-size: 14px;
     transform: rotate(-45deg);
     white-space: nowrap;
     color: #ff0000;
@@ -979,35 +985,35 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 /* Individual section styles - each can be adjusted independently */
 .diagonal-section-1 {
     top: 15%;
-    left: 42%;
+    left: 46%;
     transform: translate(calc(-50% + var(--diagonal-text-offset)), -50%);
     animation-delay: 0.2s;
 }
 
 .diagonal-section-2 {
     top: 25%;
-    left: 47%;
+    left: 46%;
     transform: translate(calc(-50% + var(--diagonal-text-offset)), -50%);
     animation-delay: 0.4s;
 }
 
 .diagonal-section-3 {
     top: 35%;
-    left: 50%;
+    left: 55%;
     transform: translate(calc(-50% + var(--diagonal-text-offset)), -50%);
     animation-delay: 0.6s;
 }
 
 .diagonal-section-4 {
     top: 45%;
-    left: 60%;
+    left: 65%;
     transform: translate(calc(-50% + var(--diagonal-text-offset)), -50%);
     animation-delay: 0.8s;
 }
 
 .diagonal-section-5 {
     top: 55%;
-    left: 85%;
+    left: 80%;
     transform: translate(calc(-50% + var(--diagonal-text-offset)), -50%);
     animation-delay: 1.0s;
 }
@@ -1025,7 +1031,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 
 .about-diagonal .top-diagonal-text {
     color: #000;
-    font-size: 16px;
+    font-size: 14px;
     transform: rotate(-45deg);
     letter-spacing: normal;
     animation: none !important;
@@ -1117,7 +1123,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 /* Third circular text (bottom left) */
 .circular-text-container-3 {
     position: absolute;
-    bottom: -50%;
+    bottom: -65%;
     left: -4%;
     width: 900px;
     height: 900px;
@@ -1147,8 +1153,8 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 /* Fourth circular text (bottom left, smaller) */
 .circular-text-container-4 {
     position: absolute;
-    bottom: -15%;
-    left: -10%;
+    bottom: -20%;
+    left: -16%;
     width: 800px;
     height: 740px;
     z-index: 2;
@@ -1323,7 +1329,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 /* Right text column styles */
 .right-text-column {
     position: absolute;
-    bottom: -30%;
+    bottom: -35%;
     right: 20%;
     width: 500px;
     font-family: '29LT Azahar Text', serif;
@@ -1350,8 +1356,8 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 /* Credits Box Styles */
 .credits-box {
     position: absolute;
-    bottom: -40%;  /* Changed from -55% to reduce space */
-    right: 20%;
+    bottom: -45%;  /* Changed from -40% to create more space */
+    right: 21%;
     width: 500px;
     color: #000000;
     font-family: '29LT Azahar Text', serif;
@@ -1570,7 +1576,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 
 .unseen-container .bottom-diagonal-text {
     font-family: 'Asemic-Regular', Arial, sans-serif;
-    font-size: 80px;
+    font-size: 70px;
     transform: rotate(-45deg);
     white-space: nowrap;
     color: #000000;
@@ -1752,7 +1758,7 @@ body, button, input, textarea, select, label, .circle-link, .black-circle {
 /* Text Control Variables */
 :root {
     --text-line-height: 0.6;
-    --text-font-size: 60px;
+    --text-font-size: 50px;
     --text-letter-spacing: 0px;
 }
 
